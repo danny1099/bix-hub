@@ -298,5 +298,141 @@
   "marketing": {
     "title": "Welcome to Bix Hub",
     "description": "Bix Hub is a platform to access reports and analytics for power bi models."
+  },
+  "get_started": {
+    "title": "See it. Understand it.",
+    "description": "Create your BIX account and start turning your data into clear, actionable insights.",
+    "navigate": {
+      "text": "Already have an account?",
+      "link": "Sign in"
+    },
+    "form": {
+      "email": { "label": "Email", "placeholder": "Enter your email address" },
+      "password": { "label": "Password", "placeholder": "Enter your password" },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    }
+  },
+  "sign_in": {
+    "title": "Track it. Optimize it.",
+    "description": "Sign in to BIX and keep driving smarter decisions with your data.",
+    "last_method": "Last used",
+    "navigate": {
+      "text": "Don’t have an account yet?",
+      "link": "Sign up"
+    },
+    "form": {
+      "email": { "label": "Email", "placeholder": "Enter your email address" },
+      "password": { "label": "Password", "placeholder": "Enter your password" },
+      "continue-button": "Continue with Email",
+      "cancel-button": "Cancel"
+    },
+    "forgot-password": "Forgot password?"
+  },
+  "forgot_password": {
+    "title": "Reset it. Stay secure.",
+    "description": "A new password is all it takes to keep going with confidence and security.",
+    "step": "Step",
+    "form": {
+      "email": { "label": "Email", "placeholder": "Enter your email address" },
+      "opt_code": { "label": "Enter your verification code here", "placeholder": "This code was sent to your email" },
+      "password": { "label": "Password", "placeholder": "Enter your password" },
+      "confirm-password": { "label": "Confirm", "placeholder": "Confirm your new password" },
+      "submit-button": "Continue with the password change",
+      "reset-button": "Reset Password",
+      "cancel-button": "Cancel"
+    },
+    "navigate": "If you not sure, let’s go back.",
+    "time-left": "Time left to verify",
+    "time-out": "Your time to enter the code has ended.",
+    "resend-code": "Let’s try again",
+    "steps": {
+      "enter-email": {
+        "title": "Enter your email",
+        "subtitle": "Enter the email linked to your BIX account"
+      },
+      "enter-code": {
+        "title": "Check your inbox",
+        "subtitle": "We’ve sent you a verification code to confirm it’s you"
+      },
+      "reset-password": {
+        "title": "Set your password",
+        "subtitle": "Set and confirm your new password to continue"
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Lead it. Live it.",
+    "description": "Your journey as a leader starts here. Lead with vision, live with purpose.",
+    "steps": "Step {step} of {total}",
+    "search-input": "Type to search you profession here",
+    "no-results": "No professions found",
+    "form": {
+      "name": { "label": "Name", "placeholder": "What's your first name?" },
+      "lastName": { "label": "Last name", "placeholder": "And your last name?" },
+      "organization": { "label": "Organization", "placeholder": "What do you want to call your organization?" },
+      "profession": { "label": "Profession", "placeholder": "What best describes your role?" },
+      "continue": "Continue with the onboarding",
+      "submit-button": "Set up my account",
+      "previous": "Go back",
+      "org-disclaimer": "This helps us set up your organization’s space — clearer structure, smoother collaboration, and room to grow together ✨"
+    },
+    "profession": {
+      "technology": "Technology",
+      "business_and_management": "Business & Management",
+      "marketing_and_sales": "Marketing & Sales",
+      "finance_and_accounting": "Finance & Accounting",
+      "education_and_training": "Education & Training",
+      "others": "Others",
+      "software-engineer": "Software Engineer",
+      "product-manager": "Product Manager",
+      "ux-ui-designer": "UX/UI Designer",
+      "data-scientist": "Data Scientist",
+      "devops-engineer": "DevOps Engineer",
+      "technical-lead": "Technical Lead",
+      "solutions-architect": "Solutions Architect",
+      "it-manager": "IT Manager",
+      "cloud-architect": "Cloud Architect",
+      "ceo-founder": "CEO/Founder",
+      "coo-chief-operating-officer": "COO/Chief Operating Officer",
+      "cfo-chief-financial-officer": "CFO/Chief Financial Officer",
+      "cmo-chief-marketing-officer": "CMO/Chief Marketing Officer",
+      "cto-chief-technology-officer": "CTO/Chief Technology Officer",
+      "business-analyst": "Business Analyst",
+      "project-manager": "Project Manager",
+      "operations-manager": "Operations Manager",
+      "strategy-consultant": "Strategy Consultant",
+      "hr-manager": "HR Manager",
+      "hr-business-partner": "HR Business Partner",
+      "sales-manager": "Sales Manager",
+      "sales-director": "Sales Director",
+      "key-account-manager": "Key Account Manager",
+      "marketing-director": "Marketing Director",
+      "business-development-manager": "Business Development Manager",
+      "customer-success-manager": "Customer Success Manager",
+      "product-marketing-manager": "Product Marketing Manager",
+      "marketing-analyst": "Marketing Analyst",
+      "revenue-operations": "Revenue Operations",
+      "financial-analyst": "Financial Analyst",
+      "financial-controller": "Financial Controller",
+      "investment-manager": "Investment Manager",
+      "risk-manager": "Risk Manager",
+      "finance-director": "Finance Director",
+      "chief-financial-officer": "Chief Financial Officer",
+      "compliance-officer": "Compliance Officer",
+      "corporate-trainer": "Corporate Trainer",
+      "learning-and-development-manager": "Learning and Development Manager",
+      "l-and-d-specialist": "L&D Specialist",
+      "education-consultant": "Education Consultant",
+      "researcher": "Researcher",
+      "student-mba-executive": "Student (MBA/Executive)",
+      "freelancer-consultant": "Freelancer/Consultant",
+      "executive-coach": "Executive Coach",
+      "innovation-manager": "Innovation Manager",
+      "customer-experience-lead": "Customer Experience Lead",
+      "procurement-manager": "Procurement Manager",
+      "supply-chain-manager": "Supply Chain Manager",
+      "business-intelligence-analyst": "Business Intelligence Analyst"
+    }
   }
 }

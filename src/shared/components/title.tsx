@@ -10,7 +10,7 @@ export const Title = ({ children, type = "h1", ...props }: Props) => {
   const Tag: keyof React.JSX.IntrinsicElements = type;
 
   return (
-    <Tag {...props} className={cn("text-3xl text-foreground scroll-m-20 tracking-tight text-balance font-semibold first:mt-0", props.className, titleFont.className)}>
+    <Tag {...props} className={cn("text-2xl text-foreground scroll-m-20 tracking-tight text-balance font-semibold first:mt-0", props.className, titleFont.className)}>
       {children}
     </Tag>
   );

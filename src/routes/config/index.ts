@@ -17,8 +17,9 @@ export const routes = {
   private: {
     prefix: "/",
     routes: {
-      tenant: {
-        prefix: "[organization]",
+      onboarding: "onboarding",
+      account: {
+        prefix: "[account]",
         routes: {
           main: {
             prefix: "/m",
