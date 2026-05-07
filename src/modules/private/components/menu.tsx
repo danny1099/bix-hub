@@ -19,7 +19,7 @@ export const Menu = () => {
   const role = user.role as UserRole;
   const segments = menuSegments[role] ?? [];
   const items = menuItems[role] ?? [];
-
+  console.log("Menu segments:", segments, "role:", role);
   return (
     <div className="border-muted flex size-full flex-col border-r transition-all duration-300">
       <MenuHeader />

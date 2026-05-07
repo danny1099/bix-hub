@@ -1,8 +1,8 @@
-import bcrypt from "bcryptjs";
 import { procedure, router } from "@/trpc/init";
 import { tryCatch } from "@/shared/utils";
 import type { User } from "@/modules/users/types";
 import { userSchema } from "@/modules/users/schema";
+import { hashPassword } from "@/modules/auth/helpers";
 import { auth } from "@/modules/auth/config";
 
 export const userRouter = router({
@@ -67,8 +67,7 @@ export const userRouter = router({
     }
 
     /*create credential account for new user */
-    const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = bcrypt.hashSync(password, salt);
+    const hashedPassword = await hashPassword(password);
     const { data: credentialAccount, error: credentialError } = await tryCatch(
       ctx.db.account.create({
         data: {

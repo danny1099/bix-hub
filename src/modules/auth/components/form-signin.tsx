@@ -48,6 +48,7 @@ export const FormSignIn = () => {
     );
 
     if (error || data?.error) {
+      console.error("Error signing in:", error?.message);
       const message = (data?.error?.code as I18nMessage) || "unknown_error";
       toast({ message, type: "error" });
       return;

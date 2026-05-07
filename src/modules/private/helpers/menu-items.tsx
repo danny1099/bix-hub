@@ -15,8 +15,32 @@ export const menuSegments: Record<UserRole, Segment[]> = {
       view: "admin",
     },
   ],
-  admin: [],
-  member: [],
+  admin: [
+    {
+      group: "main",
+      styles: "mt-5",
+      view: "admin",
+    },
+    {
+      group: "platform",
+      styles: "mt-10",
+      title: "Platform",
+      view: "admin",
+    },
+  ],
+  member: [
+    {
+      group: "main",
+      styles: "mt-5",
+      view: "admin",
+    },
+    {
+      group: "platform",
+      styles: "mt-10",
+      title: "Platform",
+      view: "admin",
+    },
+  ],
 };
 
 export const menuItems: Record<UserRole, MenuItem[]> = {
@@ -47,5 +71,22 @@ export const menuItems: Record<UserRole, MenuItem[]> = {
     },
   ],
   admin: [],
-  member: [],
+  member: [
+    {
+      name: "overview",
+      path: "overview",
+      render: "link",
+      place: "main",
+      icon: "screen",
+      view: "admin",
+    },
+    {
+      name: "users",
+      path: "users",
+      render: "link",
+      place: "platform",
+      icon: "people",
+      view: "admin",
+    },
+  ],
 };

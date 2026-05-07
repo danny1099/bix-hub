@@ -15,32 +15,19 @@ const OMITTED_SEGMENTS = new Set(["m", "en", "es"]);
 
 export function useBreadcrumbs(): BreadcrumbSegment[] {
   const pathname = usePathname();
-  const params = useParams<{ organization: string; workspace?: string }>();
+  const params = useParams<{ account: string }>();
   const t = useTranslations("menu");
 
   /* convert slugs to words for display purposes */
-  const organization = params.organization ?? "";
-  const workspace = params.workspace;
+  const organization = params.account;
 
   return useMemo(() => {
     const linkedCrumbs = {
       [organization]: {
         label: slugToWord(organization),
-        href: getPrivateRoute("overview", { organization }),
+        href: getPrivateRoute("overview", { account: organization }),
         preCrumb: null,
       },
-      ...(workspace
-        ? {
-            [workspace]: {
-              label: slugToWord(workspace),
-              href: "",
-              preCrumb: {
-                label: t("items.workspaces"),
-                href: getPrivateRoute("workspaces", { organization }),
-              },
-            },
-          }
-        : {}),
     };
 
     const rawSegments = pathname.split("/").filter(Boolean);

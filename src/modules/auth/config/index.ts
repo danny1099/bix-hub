@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { emailOTP, lastLoginMethod, customSession, organization } from "better-auth/plugins";
-import { getActiveOrganization } from "@/modules/auth/helpers";
+import { getActiveOrganization, hashPassword, verifyPassword } from "@/modules/auth/helpers";
 import { prisma } from "@/lib/db";
 import { env } from "@/config/env";
 
@@ -21,6 +21,10 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: true,
     revokeSessionsOnPasswordReset: true,
+    password: {
+      hash: hashPassword,
+      verify: verifyPassword,
+    },
   },
   plugins: [
     emailOTP({
