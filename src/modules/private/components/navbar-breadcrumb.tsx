@@ -15,7 +15,7 @@ export const Breadcrumb = ({ className }: BreadcrumbProps) => {
   const crumbs = useBreadcrumbs();
 
   return (
-    <BreadcrumbProvider className={cn("text-muted-foreground text-2xs w-full", className)}>
+    <BreadcrumbProvider className={cn("text-muted-foreground text-2xs w-full max-sm:hidden", className)}>
       <BreadcrumbList>
         <BreadcrumbItem className="mx-1">
           <BreadcrumbPage>

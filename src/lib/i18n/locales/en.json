@@ -586,6 +586,7 @@
   "models": {
     "title": "Models",
     "description": "Manage your models, explore your data and keep every decision moving forward.",
+    "no_description": "No description provided for this model. Let's add one to know more about it!",
     "search_box": "Type to search your models here",
     "no_results": {
       "title": "No models found",

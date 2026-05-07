@@ -181,4 +181,74 @@ export const modelRouter = router({
       code: 200,
     };
   }),
+  getById: procedure.input(param).query<APIResult<Model>>(async ({ ctx, input }) => {
+    const { param: id } = input;
+
+    const { data, error } = await tryCatch(
+      ctx.db.model.findFirst({
+        where: {
+          id,
+          organizationId: ctx.organizationId!,
+        },
+        include: { organization: { select: { slug: true } } },
+      })
+    );
+
+    if (error || !data) {
+      return {
+        data: null,
+        status: "error",
+        message: "unknown_error",
+        errorMessage: error?.message,
+        code: 500,
+      };
+    }
+
+    const dataWithOrganizationSlug = {
+      ...data,
+      organization: data.organization.slug,
+    };
+
+    return {
+      data: dataWithOrganizationSlug,
+      status: "success",
+      message: null,
+      code: 200,
+    };
+  }),
+  getBySlug: procedure.input(param).query<APIResult<Model>>(async ({ ctx, input }) => {
+    const { param: slug } = input;
+
+    const { data, error } = await tryCatch(
+      ctx.db.model.findFirst({
+        where: {
+          slug,
+          organizationId: ctx.organizationId!,
+        },
+        include: { organization: { select: { slug: true } } },
+      })
+    );
+
+    if (error || !data) {
+      return {
+        data: null,
+        status: "error",
+        message: "unknown_error",
+        errorMessage: error?.message,
+        code: 500,
+      };
+    }
+
+    const dataWithOrganizationSlug = {
+      ...data,
+      organization: data.organization.slug,
+    };
+
+    return {
+      data: dataWithOrganizationSlug,
+      status: "success",
+      message: null,
+      code: 200,
+    };
+  }),
 });
