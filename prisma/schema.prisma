@@ -112,6 +112,7 @@ model Organization {
   members     Member[]
   invitations Invitation[]
   sessions    Session[]
+  models      Model[]
 
   @@index([slug])
   @@map("organization")
@@ -148,4 +149,21 @@ model Invitation {
 
   @@index([inviterId, organizationId])
   @@map("invitation")
+}
+
+model Model {
+  id             String   @id @default(cuid())
+  name           String
+  slug           String   @unique
+  description    String?
+  url            String
+  status         Status   @default(ACTIVE)
+  organizationId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization @relation(fields: [organizationId], references: [id])
+
+  @@index([organizationId])
+  @@map("model")
 }

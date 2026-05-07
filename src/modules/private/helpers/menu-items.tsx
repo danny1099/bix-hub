@@ -69,6 +69,14 @@ export const menuItems: Record<UserRole, MenuItem[]> = {
       icon: "people",
       view: "admin",
     },
+    {
+      name: "models",
+      path: "models",
+      render: "link",
+      place: "platform",
+      icon: "report",
+      view: "admin",
+    },
   ],
   admin: [],
   member: [

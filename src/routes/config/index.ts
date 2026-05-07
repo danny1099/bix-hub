@@ -27,6 +27,13 @@ export const routes = {
               overview: "overview",
               accounts: "accounts",
               users: "users",
+              models: "models",
+              report: {
+                prefix: "models/",
+                routes: {
+                  report: "[report]",
+                },
+              },
             },
           },
         },

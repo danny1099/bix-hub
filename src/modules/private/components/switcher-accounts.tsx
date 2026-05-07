@@ -2,10 +2,11 @@
 import { useCallback } from "react";
 import { useParams, useRouter, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { getPublicRoute } from "@/routes/utils";
 import { useToast } from "@/shared/hooks";
 import { capitalize, cn } from "@/shared/utils";
 import { useAuth } from "@/modules/auth/hooks";
-import { MenuContent, MenuRadioGroup, MenuRadioItem } from "@/shared/components/dropdown";
+import { MenuContent, MenuRadioGroup, MenuRadioItem, MenuItem, MenuSeparator } from "@/shared/components/dropdown";
 import { MenuSub, MenuSubContent, MenuSubTrigger, MenuPortal } from "@/shared/components/dropdown";
 import { Icon, P, DropdownMenu, MenuTrigger, Badge, Avatar } from "@/shared/components";
 import { OrganizationLogo } from "@/modules/organization/components";
@@ -23,7 +24,7 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const { account } = useParams<{ account: string }>();
-  const { refetch, user } = useAuth();
+  const { refetch, user, logOut } = useAuth();
 
   /* get current organization and all organizations available */
   const { data: allOrganizations, isLoading } = trpc.organization.getAll.useQuery();
@@ -48,6 +49,13 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
     [selected?.slug, setActive, router]
   );
 
+  const onLogOut = async () => {
+    const redirectTo = getPublicRoute("sign_in")
+    await logOut().then(() => {
+      router.push(redirectTo);
+    });
+  }
+
   if (isLoading) return <SwitcherSkeleton className="mt-auto flex h-10 w-[95%] " />;
 
   return (
@@ -66,7 +74,7 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
         <MenuSub>
           <MenuSubTrigger>
             <div className="flex flex-col justify-center gap-1">
-              <P className="text-3xs ml-0.5">{t("current")}</P>
+              <P className="text-3xs ml-0.5">{t("title")}</P>
               <div className="flex w-full flex-row gap-2 py-1">
                 <OrganizationLogo url={selected?.logo as string} />
                 <div className="flex w-full flex-col items-start gap-1 text-start">
@@ -102,7 +110,12 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
               </MenuPortal>
             </div>
           </MenuSubTrigger>
-        </MenuSub>  
+        </MenuSub>
+        <MenuSeparator />
+        <MenuItem onClick={onLogOut} className="h-10 px-2 font-medium text-2xs">
+          <Icon name="logOut" className="size-4" />
+          {t("logout")}
+        </MenuItem>   
       </MenuContent>
     </DropdownMenu>
   );
