@@ -213,6 +213,10 @@
       "title": "User not found",
       "content": "We couldn't find your account"
     },
+    "user_created": {
+      "title": "User created",
+      "content": "Your user has been created. Let’s keep going ✨"
+    },
     "validation_error": {
       "title": "Check your details",
       "content": "Some details need another look."
@@ -495,7 +499,7 @@
       "members": "Members",
       "createdAt": "Created At",
       "actions": "Actions",
-      "current": "Current",
+      "current": "Active account",
       "invited": "Invited"
     },
     "options": {
@@ -504,6 +508,56 @@
       "cancel": "Cancel",
       "as_default": "Make default",
       "leave": "Leave"
+    }
+  },
+  "users": {
+    "title": "Users",
+    "description": "Manage users, define roles, assign permissions and keep your organization aligned and secure.",
+    "search_box": "Type to search your user here",
+    "no_results": {
+      "title": "No users found",
+      "subtitle": "It looks like you don't have any users yet. Let's create one!"
+    },
+    "add-button": "Add user",
+    "form": {
+      "email": { "label": "Email", "placeholder": "What's the user email?" },
+      "name": { "label": "Name", "placeholder": "Enter the user name here" },
+      "lastName": { "label": "Last name", "placeholder": "Enter the user last name" },
+      "role": { "label": "Role", "placeholder": "Role does the user have?" },
+      "password": { "label": "Password", "placeholder": "Define a password for the user" },
+      "generate_password": "Generate",
+      "submit-button": "Save User",
+      "cancel-button": "Cancel",
+      "roles": {
+        "admin": "Admin",
+        "member": "Member",
+        "owner": "Owner"
+      }
+    },
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "modal": {
+      "title": "Users",
+      "subtitle": "Manage users, define roles, assign permissions and keep your team aligned and secure.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this user?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "options": {
+      "manage": "Manage",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel"
     }
   }
 }

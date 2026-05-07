@@ -4,7 +4,7 @@ import { useDebounceCallback } from "usehooks-ts";
 import { useTranslations } from "next-intl";
 import { cn } from "@/shared/utils";
 import { useTableSelection } from "@/shared/hooks";
-import { AnimatedContent, SearchBox, EmptyData, Checkbox } from "@/shared/components";
+import { AnimatedContent, SearchBox, EmptyData, Checkbox, Badge } from "@/shared/components";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/table";
 import { AddOrganizationButton, ButtonActions, OrganizationLogo } from "@/modules/organization/components";
 import { columnsNames } from "@/modules/organization/helpers";
@@ -69,6 +69,11 @@ export const OrganizationList = () => {
                                 <span className="flex flex-row items-center gap-3">
                                   <OrganizationLogo url={org.logo as string} />
                                   {org.name}
+                                  {isActive && (
+                                    <Badge variant="light" className="ml-2">
+                                      {t("table.current")}
+                                    </Badge>
+                                  )}
                                 </span>
                               )}
                               {column !== "name" && format(organization[column])}

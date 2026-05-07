@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { useToast } from "@/shared/hooks";
 import { capitalize, cn } from "@/shared/utils";
 import { useAuth } from "@/modules/auth/hooks";
-import { MenuContent, MenuRadioGroup, MenuRadioItem, MenuSeparator } from "@/shared/components/dropdown";
+import { MenuContent, MenuRadioGroup, MenuRadioItem } from "@/shared/components/dropdown";
 import { MenuSub, MenuSubContent, MenuSubTrigger, MenuPortal } from "@/shared/components/dropdown";
-import { Icon, P, DropdownMenu, MenuTrigger, Badge } from "@/shared/components";
+import { Icon, P, DropdownMenu, MenuTrigger, Badge, Avatar } from "@/shared/components";
 import { OrganizationLogo } from "@/modules/organization/components";
 import { SwitcherSkeleton } from "@/modules/private/components";
 import { trpc } from "@/trpc/client";
@@ -23,7 +23,7 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const { account } = useParams<{ account: string }>();
-  const { refetch } = useAuth();
+  const { refetch, user } = useAuth();
 
   /* get current organization and all organizations available */
   const { data: allOrganizations, isLoading } = trpc.organization.getAll.useQuery();
@@ -54,8 +54,11 @@ export const MenuAccountSwitcher = ({ className }: AccountSwitcherProps) => {
     <DropdownMenu>
       <MenuTrigger asChild>
         <div className={cn("text-2xs hover:bg-accent mt-auto flex h-fit w-[95%] items-center justify-normal gap-2 rounded-md px-3 py-2", className )}>
-          <OrganizationLogo url={selected?.logo as string} />
-          <p className="max-w-[17ch] truncate text-2xs leading-none font-semibold">{selected?.name}</p>
+          <Avatar url={user?.image as string} size="sm" />
+          <div className="flex flex-col items-start">
+            <P className="text-accent-foreground text-2xs font-medium">{user?.name}</P>
+            <span className="text-4xs text-muted-foreground -mt-0.5">{user?.email}</span>
+          </div>
           <Icon name="chevronExpand" className="text-muted-foreground ml-auto size-4" />
         </div>
       </MenuTrigger>

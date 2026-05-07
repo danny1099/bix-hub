@@ -26,6 +26,7 @@ export const routes = {
             routes: {
               overview: "overview",
               accounts: "accounts",
+              users: "users",
             },
           },
         },

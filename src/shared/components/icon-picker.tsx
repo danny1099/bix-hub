@@ -14,7 +14,8 @@ interface Props {
 
 /* prettier-ignore */
 export const IconPicker = ({ value, onChange, withLocalDevice = true, className }: Props) => {
-  const [selected, setSelected] = useState({ type: "icon", value });
+  const isIconType = !value.startsWith("http") && !value.startsWith("data");
+  const [selected, setSelected] = useState({ type: isIconType ? "icon" : "image", value });
   const [iconActive, colorActive] = selected.value.split(":") ?? [];
   const t = useTranslations("icons");
 
@@ -40,7 +41,7 @@ export const IconPicker = ({ value, onChange, withLocalDevice = true, className 
           <img
             src={selected.value}
             alt={t("title")}
-            className={cn("size-6 rounded-full object-cover aspect-auto", className)}
+            className={cn("size-6 rounded-full object-contain", className)}
           />
         ) : (
           <Button
