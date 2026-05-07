@@ -183,8 +183,8 @@ export const boxVariants = cva("relative shrink-0 flex items-center justify-cent
     },
     sizes: {
       sm: "size-5 px-0.5",
-      md: "size-7 px-1.5",
-      lg: "size-9 px-2",
+      md: "size-6 px-1.5",
+      lg: "size-8 px-2",
     },
   },
   defaultVariants: {

@@ -22,6 +22,8 @@ model User {
   image         String?
   status        Status    @default(ACTIVE)
   role          String?
+  hasOnboarded  Boolean   @default(false)
+  profession    String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   banned        Boolean?

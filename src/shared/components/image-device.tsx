@@ -62,7 +62,7 @@ export const ImageFromDevice = ({ onImageSelect, format = "base64", className }:
   return (
     <div className={cn("border-muted flex w-full flex-col flex-wrap gap-2 border-t p-2 md:justify-around", className)}>
       <p className="text-3xs text-muted-foreground">{t("title")}</p>
-      <div className="border-muted bg-accent hover:bg-accent/80 flex h-9 w-full cursor-pointer flex-row items-center justify-between gap-2 rounded-md border border-dashed transition-colors">
+      <div className="border-muted bg-accent hover:bg-accent/80 flex h-9 w-full cursor-pointer flex-row items-center justify-between gap-2 rounded-md border border-dashed px-1.5 transition-colors">
         {fileName && (
           <Button
             variant="destructive"

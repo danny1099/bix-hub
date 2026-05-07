@@ -19,6 +19,7 @@ export const getActiveOrganization = cache(async (sessionId: string) => {
         role: null,
         organization: null,
         organizationId: null,
+        hasOnboarded: false,
       };
     }
 
@@ -28,6 +29,7 @@ export const getActiveOrganization = cache(async (sessionId: string) => {
       role,
       organization: organization.slug,
       organizationId: organization.id,
+      hasOnboarded: session?.user.hasOnboarded,
     };
   }
 
@@ -42,6 +44,7 @@ export const getActiveOrganization = cache(async (sessionId: string) => {
       role: null,
       organization: null,
       organizationId: null,
+      hasOnboarded: false,
     };
   }
 
@@ -51,5 +54,6 @@ export const getActiveOrganization = cache(async (sessionId: string) => {
     role,
     organization: organization.slug,
     organizationId: session?.activeOrganizationId,
+    hasOnboarded: session?.user.hasOnboarded,
   };
 });

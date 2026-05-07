@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { emailOTP, lastLoginMethod, customSession } from "better-auth/plugins";
+import { emailOTP, lastLoginMethod, customSession, organization } from "better-auth/plugins";
 import { getActiveOrganization } from "@/modules/auth/helpers";
 import { prisma } from "@/lib/db";
 import { env } from "@/config/env";
@@ -36,6 +36,7 @@ export const auth = betterAuth({
         session,
       };
     }),
+    organization(),
     lastLoginMethod(),
     nextCookies(),
   ],

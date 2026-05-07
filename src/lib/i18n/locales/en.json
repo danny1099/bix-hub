@@ -225,6 +225,14 @@
       "title": "Action not allowed",
       "content": "It appears that you are not authorized to perform this action. Please try again."
     },
+    "onboarding_error": {
+      "title": "Onboarding failed",
+      "content": "Something went wrong while completing your onboarding. Let’s try again."
+    },
+    "onboarding_completed": {
+      "title": "Onboarding completed",
+      "content": "Your onboarding is complete. Let’s keep going ✨"
+    },
     "organization_already_exists": {
       "title": "Organization already exists",
       "content": "It looks like you already have an organization with this name."
@@ -295,6 +303,15 @@
     "title": "Just a moment",
     "description": "We are organizing some things for you"
   },
+  "menu": {
+    "platform": "Platform",
+    "items": {
+      "overview": "Overview",
+      "accounts": "Accounts",
+      "users": "Users"
+    }
+  },
+
   "marketing": {
     "title": "Welcome to Bix Hub",
     "description": "Bix Hub is a platform to access reports and analytics for power bi models."
@@ -433,6 +450,60 @@
       "procurement-manager": "Procurement Manager",
       "supply-chain-manager": "Supply Chain Manager",
       "business-intelligence-analyst": "Business Intelligence Analyst"
+    }
+  },
+  "organization": {
+    "title": "Accounts",
+    "description": "Manage your shared spaces, align your team, and keep every decision moving forward.",
+    "search_box": "Type to search your accounts here",
+    "no_results": {
+      "title": "No accounts found",
+      "subtitle": "It looks like you don't have any accounts yet. Let's create one!"
+    },
+    "add-button": "Add Account",
+    "form": {
+      "name": { "label": "Name", "placeholder": "What's your account called?" },
+      "change-account": {
+        "label": "Set this account as active",
+        "placeholder": "This will be your account active once being created."
+      },
+      "submit-button": "Save Account",
+      "cancel-button": "Cancel"
+    },
+    "modal": {
+      "title": "Your account",
+      "subtitle": "Manage your shared spaces, align your team, and keep every decision moving forward.",
+      "delete": {
+        "title": "Wait a moment",
+        "subtitle": "Are you sure you want to delete this account?",
+        "description": "This action cannot be undone.",
+        "cancel-button": "No, I changed my mind",
+        "confirm-button": "Yes, I'm sure"
+      }
+    },
+    "switcher": {
+      "title": "Your accounts",
+      "current": "Active account",
+      "invited": "Invited",
+      "invitations": "Invitations",
+      "role": "I'm a {role} | {count, plural, one {# member} other {+# members}}",
+      "members": "{count, plural, one {# member} other {+# members}}"
+    },
+    "table": {
+      "name": "Name",
+      "role": "Role",
+      "members": "Members",
+      "createdAt": "Created At",
+      "actions": "Actions",
+      "current": "Current",
+      "invited": "Invited"
+    },
+    "options": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "as_default": "Make default",
+      "leave": "Leave"
     }
   }
 }

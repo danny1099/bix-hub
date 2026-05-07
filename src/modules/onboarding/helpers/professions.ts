@@ -1,0 +1,35 @@
+export const PROFESSIONS = {
+  technology: ["software-engineer", "product-manager", "technical-lead", "solutions-architect", "it-manager"],
+  business_and_management: [
+    "ceo-founder",
+    "coo-chief-operating-officer",
+    "business-analyst",
+    "project-manager",
+    "operations-manager",
+    "hr-manager",
+    "hr-business-partner",
+    "key-account-manager",
+  ],
+  marketing_and_sales: [
+    "marketing-director",
+    "sales-director",
+    "sales-manager",
+    "product-marketing-manager",
+    "marketing-analyst",
+    "revenue-operations",
+  ],
+  education_and_training: [
+    "corporate-trainer",
+    "learning-and-development-manager",
+    "education-consultant",
+    "researcher",
+  ],
+  others: [
+    "student-mba-executive",
+    "freelancer-consultant",
+    "executive-coach",
+    "innovation-manager",
+    "customer-experience-lead",
+    "supply-chain-manager",
+  ],
+};

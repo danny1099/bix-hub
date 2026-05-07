@@ -26,6 +26,11 @@ export const IconPicker = ({ value, onChange, withLocalDevice = true, className 
   const onImageSelect = (value: string) => {
     setSelected({ type: "image", value });
     onChange(value);
+
+    if (value === "") {
+      setSelected({ type: "icon", value: "company:black" });
+      onChange("company:black");
+    }
   };
 
   return (
@@ -35,7 +40,7 @@ export const IconPicker = ({ value, onChange, withLocalDevice = true, className 
           <img
             src={selected.value}
             alt={t("title")}
-            className={cn("size-6 rounded-full object-cover", className)}
+            className={cn("size-6 rounded-full object-cover aspect-auto", className)}
           />
         ) : (
           <Button
@@ -81,7 +86,7 @@ export const IconPicker = ({ value, onChange, withLocalDevice = true, className 
             );
           })}
         </div>
-        {withLocalDevice && <ImageFromDevice format="url" onImageSelect={onImageSelect} />}
+        {withLocalDevice && <ImageFromDevice format="base64" onImageSelect={onImageSelect} />}
       </PopoverContent>
     </Popover>
   );

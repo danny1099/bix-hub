@@ -22,9 +22,10 @@ export const routes = {
         prefix: "[account]",
         routes: {
           main: {
-            prefix: "/m",
+            prefix: "/",
             routes: {
-              overview: "/overview",
+              overview: "overview",
+              accounts: "accounts",
             },
           },
         },
