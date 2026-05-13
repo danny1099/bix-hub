@@ -16,7 +16,7 @@ export const ModelCollapsibleList = () => {
   return (
     <Collapsible>
       <CollapsibleTrigger asChild>
-        <Button variant="navlink" icon="collection" place="start" className="w-[95%] justify-start">
+        <Button variant="navlink" icon="collection" place="start" className="w-[95%] justify-start font-normal">
           {t("overview")}
           <Icon name="chevronDown" className="ml-auto size-4" />
         </Button>
