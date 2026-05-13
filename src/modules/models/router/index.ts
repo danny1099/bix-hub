@@ -153,6 +153,7 @@ export const modelRouter = router({
     const { data, error } = await tryCatch(
       ctx.db.model.findMany({
         where: {
+          status: "ACTIVE",
           organizationId: ctx.organizationId!,
         },
         include: { organization: { select: { slug: true } } },

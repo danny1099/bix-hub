@@ -7,6 +7,7 @@ import { useAuth } from "@/modules/auth/hooks";
 import { type IconName, AnimatedContent, Divider } from "@/shared/components";
 import { MenuAccountSwitcher, MenuGroup, MenuHeader, MenuLink, MenuSkeleton } from "@/modules/private/components";
 import { menuItems, menuSegments } from "@/modules/private/helpers";
+import { ModelCollapsibleList } from "@/modules/models/components";
 
 export const Menu = () => {
   const t = useTranslations("menu");
@@ -19,7 +20,7 @@ export const Menu = () => {
   const role = user.role as UserRole;
   const segments = menuSegments[role] ?? [];
   const items = menuItems[role] ?? [];
-  console.log("Menu segments:", segments, "role:", role);
+
   return (
     <div className="border-muted flex size-full flex-col border-r transition-all duration-300">
       <MenuHeader />
@@ -34,9 +35,12 @@ export const Menu = () => {
                     .filter((i) => i.view === "admin")
                     .filter((i) => i.place === group)
                     .map(({ name, path, icon, render }) => {
-                      const redirectTo = getPrivateRoute(path, { account });
+                      const redirectTo = getPrivateRoute(path, { account, report: "" });
                       if (render === "divider")
                         return <Divider key={name} type="horizontal" className="bg-border-muted w-full" />;
+
+                      /*render group models listed*/
+                      if (render === "group") return <ModelCollapsibleList key={name} />;
 
                       return (
                         <li key={name}>

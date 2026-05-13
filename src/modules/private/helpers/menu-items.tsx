@@ -48,9 +48,9 @@ export const menuItems: Record<UserRole, MenuItem[]> = {
     {
       name: "overview",
       path: "overview",
-      render: "link",
+      render: "group",
       place: "main",
-      icon: "screen",
+      icon: "collection",
       view: "admin",
     },
     {
@@ -73,21 +73,13 @@ export const menuItems: Record<UserRole, MenuItem[]> = {
       name: "models",
       path: "models",
       render: "link",
-      place: "platform",
+      place: "main",
       icon: "report",
       view: "admin",
     },
   ],
   admin: [],
   member: [
-    {
-      name: "overview",
-      path: "overview",
-      render: "link",
-      place: "main",
-      icon: "screen",
-      view: "admin",
-    },
     {
       name: "users",
       path: "users",
